@@ -11,23 +11,31 @@ function checkGuess() {
   pastGuesses.innerHTML += userGuess + " ";
   if (guessCount == 10) {
     message.innerHTML = "!!!GAME OVER!!!";
-    message.style.color = "red"
+    message.style.color = "red";
     disableForm(guessField, guessButton);
   } else {
-    if (userGuess == randomNumber) {
-      message.innerHTML = "Congratulations! You got it right!";
-      message.style.color = "green"
-      disableForm(guessField, guessButton);
-    } else {
-      if (userGuess < randomNumber) {
-        message.innerHTML = "Your guess is too low!";
-      } else if (userGuess > randomNumber) {
-        message.innerHTML = "Your guess is too high!";
+    if (userGuess){
+      if (userGuess == randomNumber) {
+        message.innerHTML = "Congratulations! You got it right!";
+        message.style.color = "green";
+        disableForm(guessField, guessButton);
+      } else {
+        if (userGuess < randomNumber) {
+          message.innerHTML = "Your guess is too low!";
+          message.style.color = "#0066ff";
+        } else if (userGuess > randomNumber) {
+          message.innerHTML = "Your guess is too high!";
+          message.style.color = "#0066ff";
+        }
       }
+      guessCount++;
+      guesses.innerHTML = 10 - guessCount;
+      guessField.value = "";
     }
-    guessCount++;
-    guesses.innerHTML = 10 - guessCount;
-    guessField.value = "";
+    else {
+      message.innerHTML = "Please enter number!!!";
+      message.style.color = "#0066ff";
+    }
   }
   guessField.focus();
 }
