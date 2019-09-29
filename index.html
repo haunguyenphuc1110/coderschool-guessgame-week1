@@ -5,26 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width" />
     <title>Number guessing game</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css"/>
   </head>
 
   <body>
     <h1>Number Guessing Game</h1>
-    <h3>You can retry 10 times</h3>
-    <p>
-      Remain Guesses: <p id="guesses">10</p>
-    </p>
-    <p>
-      Past Guesses: <p id="pastGuesses"></p>
-    </p>
-    <p id="message"></p>
-
+    <p id="message">Enter a number between 1-10 and click the button ENTER GUESS</p>
     <div class="form">
       <label for="guessField">Enter your guess: </label>
-      <input type="number" id="guessField" autofocus/>
-      <button id="guessButton" onclick="checkGuess()">Enter Guess</button>
+      <input type="number" id="guessField" disabled="false"/>
+      <button id="guessButton" disabled="false">Guess</button>
+      <button id="retryButton" disabled="true">Retry</button>
     </div>
-
-    <script src="script.js"></script>
+    <div id="remainArea">
+      <h2>Remain Guesses (You have total 10 guesses)</h2>
+      <p id="guesses">10</p>
+    </div>
+    <div id="historyArea">
+      <h2>Your Previous Guesses</h2>
+      <ol id="historyList"></ol>
+    </div>
+    <script src="script.js" type="text/javascript"></script>
   </body>
 </html>

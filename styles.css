@@ -1,9 +1,28 @@
 button {
   background-color: #4CAF50; /* Green */
   border: none;
+  border-radius: 10px;
   color: white;
   padding: 5px 10px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
+}
+
+#message {
+  font-size: 20px
+}
+
+#remainArea {
+  margin-top: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 16px
+}
+
+#historyArea {
+	margin-top: 10px;
+	padding-left: 5px;
+  padding-right: 5px;
+  font-size: 16px
 }
